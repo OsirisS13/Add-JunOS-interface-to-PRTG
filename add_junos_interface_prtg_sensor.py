@@ -107,7 +107,7 @@ def add_prtg_sensor(prestage_data_id):
 	PRTGObjID = str(sensor_prestage_data[prestage_data_id]['PRTGObjID'])
 	intSNMPid = str(sensor_prestage_data[prestage_data_id]['intSNMPid'])
 	ServiceName = str(sensor_prestage_data[prestage_data_id]['ServiceName'])
-	#call to duplicate the shaffi industries SNMP traffic sensor, which then returns the URL of the new sensor. target ID is the ID of the device object in prtg to create the new sensor on
+	#call to duplicate the template SNMP traffic sensor, which then returns the URL of the new sensor. target ID is the ID of the device object in prtg to create the new sensor on
 	r = requests.get('https://prtg.cc.lan//api/duplicateobject.htm?id=11383&name=' + ServiceName + '&targetid=' + PRTGObjID + '&username='+ myuser + '&password=' + mypassword, verify=False)
 	print "HTTPS Status Code: ", r.status_code
 	#extract new prtg object id from returned url
