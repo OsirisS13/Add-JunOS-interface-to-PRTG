@@ -17,6 +17,9 @@ import time
 from multiprocessing import Pool
 from multiprocessing.dummy import Pool as ThreadPool 
 from functools import partial
+#disable https verify failure warning
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning) 
 
 #this YAML data should be stored in a separate file and called properly (see https://github.com/Juniper/py-junos-eznc/tree/master/lib/jnpr/junos/op for examples how, and https://www.juniper.net/documentation/en_US/junos-pyez1.2/topics/task/program/junos-pyez-views-op-defining.html)
 # but I'm lazy so just putting it here
